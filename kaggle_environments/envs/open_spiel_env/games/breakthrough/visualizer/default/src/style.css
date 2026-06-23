@@ -44,7 +44,7 @@ body,
 .header .player {
   padding: 4px 12px;
   background-color: white;
-  transition: background-color 300ms;
+  transition: scale 300ms, background-color 300ms;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -54,24 +54,28 @@ body,
 .header .player .glyph {
   width: 0.9rem;
   height: 0.9rem;
-  border-radius: 2px;
+  border-radius: 50%;
   display: inline-block;
+  border: 1px solid #3c3b37;
 }
 
 .header .player.p0 .glyph {
-  background-color: #1f4f8b;
+  background-color: #050001;
 }
 .header .player.p1 .glyph {
-  background-color: #9a3324;
+  background-color: #f5f1e2;
 }
 
-.header .player .score {
-  opacity: 0.75;
-  font-variant-numeric: tabular-nums;
+.header .player .count {
+  font-family: 'Mynerve', cursive;
+  font-weight: 400;
+  color: #444343;
+  font-size: 0.85rem;
 }
 
 .header .player.active {
   background-color: #bdeeff;
+  scale: 1.08;
 }
 
 .header .vs {
@@ -93,6 +97,7 @@ body,
 }
 
 .board-wrap canvas {
+  /* Override .viewer canvas { position: absolute; ... } from web/core. */
   position: relative;
   display: block;
   max-width: 100%;
@@ -111,12 +116,13 @@ body,
   font-weight: 600;
   min-height: 18px;
   min-width: 240px;
-  margin: 8px 0 32px;
+  margin: 8px 0 4px;
   flex-shrink: 0;
   text-align: center;
 }
 
 .status-container .annotation {
+  font-family: 'Mynerve', cursive;
   font-weight: 400;
   color: #444343;
 }
@@ -132,6 +138,5 @@ body,
   .status-container {
     font-size: 0.8rem;
     min-width: 180px;
-    gap: 8px;
   }
 }
